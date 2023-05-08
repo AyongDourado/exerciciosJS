@@ -1,0 +1,386 @@
+<!-- 1 - Crie um formulário com 4 botões que, ao clicar em cada um, altere a cor do plano de fundo da página para vermelho, verde, azul e amarelo, respectivamente.
+2 - Crie uma página com 4 links (tag <a>), cada um representando o nome de uma cor, que, utilizando o evento onmouseover altere a cor do plano de fundo para cor correspondente.
+3 - Crie uma página com uma lista (select - RadioButton) com 4 opções de cores. Ao selecionar uma opção de cor, altere o plano de fundo da página para a cor específica.
+(radio button?)
+4 – Crie um parágrafo (<p>) com um texto como conteúdo. Adicione um botão que, ao ser clicado, oculte ou mostre o texto do parágrafo.
+-
+5 – Crie um formulário de seleção de itens com checkbox. O formulário deve possuir um botão desabilitado. O botão só se torna clicável quando tiver pelo menos 2 checkboxs marcado.
+6 – Crie um parágrafo com um texto como conteúdo. Crie 4 botões. Dois para trocar a cor da fonte, de branco para preto e vice-versa e outros dois para fazer o mesmo com o fundo do parágrafo. Use divs se julgar necessário.
+7 - Crie um botão + (mais) e outro - (menos) na mesma página do exercício anterior. Esses botões aumentam e diminuem o tamanho da fonte, respectivamente.
+8 - Ainda continuando no exercício 6, faça um botão que transforme todo o texto do parágrafo em maiúscula, e outro em minúscula.
+9 - Crie um formulário com os campos para cadastrar o usuário de um sistema (login, senha e confirmar senha). Permita que a página seja submetida apenas se todos os campos estiverem preenchidos, se os campos senha e confirma senha forem iguais e a senha possuir entre 6 e 10 caracteres.
+10 - Crie um formulário de cadastro de cliente. O formulário deve conter os campos Nome (text), Pessoa (Física/Jurídica - radio), CPF (text), CNPJ (text), data de nascimento, endereço (text), cep (text), telefone (text), email. O formulário deve ativar o campo CPF apenas se o RadioButton de pessoa física estiver ativo e o campo de CNPJ no caso de pessoa jurídica. O campo data de nascimento também só deve estar ativo no caso de pessoa física ser selecionado e deve aceitar que somente números sejam digitados. O campo CEP também só deve aceitar número. -->
+
+
+<!-- 1 - Crie um formulário com 4 botões que, ao clicar em cada um, altere a cor do plano de fundo da página para vermelho, verde, azul e amarelo, respectivamente. -->
+
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atividade</title>
+        <script>
+            function alterarCor(cor) {
+                document.body.style.backgroundColor = cor;
+            }
+        </script>       
+    </head>
+    <body>
+        <form>
+            <button type="button" onclick="alterarCor('red')">Vermelho</button>
+            <button type="button" onclick="alterarCor('green')">Verde</button>
+            <button type="button" onclick="alterarCor('blue')">Azul</button>
+            <button type="button" onclick="alterarCor('yellow')">Amarelo</button>
+        </form>
+    </body>
+</html> -->
+
+
+
+<!-- // ---------------------------------- // ------------------------------------- // ----------------------------------- // -->
+
+
+
+<!-- 2 - Crie uma página com 4 links (tag <a>), cada um representando o nome de uma cor, que, utilizando o evento onmouseover altere a cor do plano de fundo para cor correspondente. -->
+
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            function alterarCor(cor){
+                document.body.style.backgroundColor = cor;
+            }
+        </script>
+    </head>
+    <body>
+        <a href="#" onmouseover="alterarCor('purple')">Roxo</a>
+        <a href="#" onmouseover="alterarCor('orange')">Laranja</a>
+        <a href="#" onmouseover="alterarCor('pink')">Rosa</a>
+        <a href="#" onmouseover="alterarCor('gray')">Cinza</a>
+    </body>
+</html> -->
+
+
+
+<!-- // ---------------------------------- // ------------------------------------- // ----------------------------------- // -->
+
+
+
+<!-- 3 - Crie uma página com uma lista (select - RadioButton) com 4 opções de cores. Ao selecionar uma opção de cor, altere o plano de fundo da página para a cor específica. -->
+
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            function alterarCor() {
+                var select = document.getElementById("cores");
+                var cor = select.options[select.selectedIndex].value;
+                document.body.style.backgroundColor = cor;
+            }
+        </script>
+    </head>
+    <body>
+        <select id="cores" onchange="alterarCor()">
+            <option value="white">Branco</option>
+            <option value="SpringGreen">SpringGreen</option>
+            <option value="LightSeaGreen">LightSeaGreen</option>
+            <option value="MediumSlateBlue">MediumSlateBlue</option>
+        </select>
+    </body>
+</html> -->
+
+
+
+<!-- // ---------------------------------- // ------------------------------------- // ----------------------------------- // -->
+
+
+
+<!-- 4 – Crie um parágrafo (<p>) com um texto como conteúdo. Adicione um botão que, ao ser clicado, oculte ou mostre o texto do parágrafo. -->
+
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            function ocultarMostrar() {
+                var texto = document.getElementById("texto");           
+                if (texto.style.display === "none") {           
+                     texto.style.display = "block";           
+                }else{           
+                     texto.style.display = "none";          
+                }          
+            }           
+        </script>
+    </head>
+    <body>
+        <button type="button" onclick="ocultarMostrar()">?</button>
+        <br>
+        <p id="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet sed incidunt odit ipsa, id aliquid accusantium eum hic, pariatur corrupti eius voluptas. Nemo veniam sapiente, sed fuga ea sint culpa.</p>
+    </body>
+</html> -->
+
+<!-- tag style 'style.display'
+Display: none - Oculta um objeto da tela.
+Display: block – Exibe um objeto em forma de bloco na tela.
+Display: inline – Exibe objetos na mesma linha. -->
+
+
+
+<!-- // ---------------------------------- // ------------------------------------- // ----------------------------------- // -->
+
+
+
+<!-- 5 – Crie um formulário de seleção de itens com checkbox. O formulário deve possuir um botão desabilitado. O botão só se torna clicável quando tiver pelo menos 2 checkboxs marcado. -->
+
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+        </script>
+    </head>
+    <body>
+        <form>
+            <label><input type="checkbox" name="item" value="1">Item 1</label><br>
+            <label><input type="checkbox" name="item" value="2">Item 2</label><br>
+            <label><input type="checkbox" name="item" value="3">Item 3</label><br>
+            <label><input type="checkbox" name="item" value="4">Item 4</label><br>
+            <button type="submit" id="btn-submit" disabled>Enviar</button>
+        </form>
+        <script>
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const btnSubmit = document.getElementById('btn-submit');
+            for (const checkbox of checkboxes) {
+                checkbox.addEventListener('change', function() {
+                    var checked = document.querySelectorAll('input[type="checkbox"]:checked');
+                    if (checked.length >= 2) {
+                        btnSubmit.disabled = false;
+                    } else {
+                        btnSubmit.disabled = true;
+                    }
+                });
+            }
+        </script>
+    </body>
+</html> -->
+
+
+
+<!-- // ---------------------------------- // ------------------------------------- // ----------------------------------- // -->
+
+
+
+<!-- 6 – Crie um parágrafo com um texto como conteúdo. Crie 4 botões. Dois para trocar a cor da fonte, de branco para preto e vice-versa e outros dois para fazer o mesmo com o fundo do parágrafo. Use divs se julgar necessário. -->
+<!-- 7 - Crie um botão + (mais) e outro - (menos) na mesma página do exercício anterior. Esses botões aumentam e diminuem o tamanho da fonte, respectivamente. -->
+<!-- 8 - Ainda continuando no exercício 6, faça um botão que transforme todo o texto do parágrafo em maiúscula, e outro em minúscula. -->
+
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>              
+        <div>
+            <button onclick="trocarCorFonte('white')">Fonte Branca</button>
+            <button onclick="trocarCorFonte('black')">Fonte Preta</button>
+            <button onclick="trocarCorFundo('white')">Fundo Branco</button>
+            <button onclick="trocarCorFundo('black')">Fundo Preto</button>
+            <br><br>
+            <button onclick="aumentarFonte()">+</button>
+            <button onclick="diminuirFonte()">-</button>
+            <br><br>
+            <button onclick="maiusculo()">Maiúsculo</button>
+            <button onclick="minusculo()">Minúsculo</button>
+        </div>
+
+        <p id="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam expedita quibusdam reiciendis ullam quis. Reiciendis, voluptas! Dolorum nihil tenetur illo, beatae ex, nostrum amet repellendus sunt ipsam eos fugiat hic!</p>
+      
+        <script>
+            function trocarCorFonte(corNova) {
+                var texto = document.getElementById("texto");
+                texto.style.color = corNova;                
+            }
+      
+            function trocarCorFundo(corNova) {
+                var texto = document.getElementById("texto");
+                texto.style.backgroundColor = corNova;
+            }
+
+            function aumentarFonte() {
+                var texto = document.getElementById("texto");
+                var tamanhoAtual = window.getComputedStyle(texto).getPropertyValue("font-size");
+                var novoTamanho = parseFloat(tamanhoAtual) + 2;
+                texto.style.fontSize = novoTamanho + "px";
+            }
+            
+            function diminuirFonte() {
+                var texto = document.getElementById("texto");
+                var tamanhoAtual = window.getComputedStyle(texto).getPropertyValue("font-size");
+                var novoTamanho = parseFloat(tamanhoAtual) - 2;
+                texto.style.fontSize = novoTamanho + "px";
+            }
+
+            function maiusculo() {
+                var texto = document.getElementById("texto");
+                texto.style.textTransform = "uppercase";
+            }
+
+            function minusculo(){
+                var texto = document.getElementById("texto");
+                texto.style.textTransform = "lowercase";
+            }
+        </script>
+    </body>
+</html> -->
+
+
+
+<!-- // ---------------------------------- // ------------------------------------- // ----------------------------------- // -->
+
+
+
+<!-- 9 - Crie um formulário com os campos para cadastrar o usuário de um sistema (login, senha e confirmar senha). Permita que a página seja submetida apenas se todos os campos estiverem preenchidos, se os campos senha e confirma senha forem iguais e a senha possuir entre 6 e 10 caracteres. -->
+
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form onsubmit="return validarFormulario()">
+            <label for="login">Login:</label>
+            <input type="text" id="login" name="login" required><br>
+            
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required><br>
+            
+            <label for="confirmarSenha">Confirmar senha:</label>
+            <input type="password" id="confirmarSenha" name="confirmarSenha" required><br>
+            
+            <input type="submit" value="Cadastrar">
+        </form>
+        
+        <script>
+            function validarFormulario() {
+            const login = document.getElementById("login").value;
+            const senha = document.getElementById("senha").value;
+            const confirmarSenha = document.getElementById("confirmarSenha").value;
+            
+            // Verifica se todos os campos foram preenchidos
+            if (login === "" || senha === "" || confirmarSenha === "") {
+                alert("Por favor, preencha todos os campos.");
+                return false;
+            }
+            
+            // Verifica se as senhas são iguais
+            if (senha !== confirmarSenha) {
+                alert("As senhas não coincidem.");
+                return false;
+            }
+            
+            // Verifica se a senha tem entre 6 e 10 caracteres
+            if (senha.length < 6 || senha.length > 10) {
+                alert("A senha deve ter entre 6 e 10 caracteres.");
+                return false;
+            }
+            
+            return true;
+            }
+        </script>
+    </body>
+</html> -->
+
+
+
+<!-- // ---------------------------------- // ------------------------------------- // ----------------------------------- // -->
+
+
+<!-- 10 - Crie um formulário de cadastro de cliente. O formulário deve conter os campos Nome (text), Pessoa (Física/Jurídica - radio), CPF (text), CNPJ (text), data de nascimento, endereço (text), cep (text), telefone (text), email. O formulário deve ativar o campo CPF apenas se o RadioButton de pessoa física estiver ativo e o campo de CNPJ no caso de pessoa jurídica. O campo data de nascimento também só deve estar ativo no caso de pessoa física ser selecionado e deve aceitar que somente números sejam digitados. O campo CEP também só deve aceitar número. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Cadastro de Cliente</h1>
+        <form action="#" method="POST">  <!--o valor # significa que os dados serão enviados para a mesma página (URL) onde o formulário está sendo exibido. -->
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br><br>
+            
+            <label for="pessoa-fisica">Pessoa Física:</label>
+            <input type="radio" id="pessoa-fisica" name="pessoa" value="fisica" onchange="ativarCampos()"><br><br>
+            
+            <label for="pessoa-juridica">Pessoa Jurídica:</label>
+            <input type="radio" id="pessoa-juridica" name="pessoa" value="juridica" onchange="ativarCampos()"><br><br>
+            
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" disabled><br><br>
+            
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" id="cnpj" name="cnpj" disabled><br><br>
+            
+            <label for="data-nascimento">Data de Nascimento:</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" disabled><br><br>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required><br><br>
+            
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" pattern="\d{8}" required><br><br> <!-- pattern="\d{8}" especifica que o valor do campo de entrada deve conter exatamente oito dígitos numéricos -->
+            
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <script>
+            function ativarCampos() {
+                var campoCpf = document.getElementById("cpf");
+                var campoCnpj = document.getElementById("cnpj");
+                var campoDataNasc = document.getElementById("data-nascimento");
+                var pessoaFisicaRadio = document.getElementById("pessoa-fisica");
+
+                if (pessoaFisicaRadio.checked) {
+                    campoCpf.disabled = false;
+                    campoCnpj.disabled = true;
+                    campoDataNasc.disabled = false;
+                } else {
+                    campoCpf.disabled = true;
+                    campoCnpj.disabled = false;
+                    campoDataNasc.disabled = true;
+                }
+            }
+        </script>
+    </body>
+</html>
